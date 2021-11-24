@@ -18,6 +18,7 @@
                 </todo-item>
             </todo-list>
         </ul>
+        <dynamic-text :showText="showText"></dynamic-text>
     </div>
 </template>
 
@@ -25,14 +26,17 @@
     // import HelloWorld from './components/HelloWorld.vue'
     import TodoList from "@/components/TodoList";
     import TodoItem from "@/components/TodoItem";
+    import DynamicText from "@/components/DynamicText";
 
     export default {
         name: 'App',
         components: {
-            TodoList, TodoItem
+            // eslint-disable-next-line vue/no-unused-components
+            TodoList, TodoItem,DynamicText
         },
         data() {
             return {
+                showText: 'conquer',
                 message: 'hello world',
                 list: [
                     {
