@@ -1,5 +1,11 @@
 <template>
     <div id="app">
+        <!--v-model属于一种语法糖-->
+        <input v-model="message">
+        <br>
+        <input :value="message" @input="handleChange">
+
+
         {{message}}
 
         <hr>
@@ -24,6 +30,9 @@
 
 <script>
     // import HelloWorld from './components/HelloWorld.vue'
+    /**
+     * 只局部作用域生效
+     */
     import TodoList from "@/components/TodoList";
     import TodoItem from "@/components/TodoItem";
     import DynamicText from "@/components/DynamicText";
@@ -55,7 +64,12 @@
         },
       methods:{
           handleDelete(val){
+              //.sync是下面emit这样形式的一个缩写
+              this.$emit('update:title','参数')
               console.log('handleDelete',val);
+          },
+          handleChange(e){
+              this.message = e.target.value
           }
       }
     }

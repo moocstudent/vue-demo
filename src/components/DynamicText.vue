@@ -87,7 +87,7 @@
     /*}*/
     .small {
         /*height: 200px;*/
-        width: 50%;
+        width: 60%;
         position: relative;
         left: 100px;
         top: 100px;
